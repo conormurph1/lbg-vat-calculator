@@ -14,7 +14,7 @@ pipeline {
         stage('Build') {
             steps {
                 withSonarQubeEnv('sonar-qube-1'){
-                    sh "${scannerHome}/bin/sonar-scanner"
+                    sh 'mvn clean package sonar:sonar'
                 }
             }
         }
